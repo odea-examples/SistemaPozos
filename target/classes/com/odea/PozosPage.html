@@ -1,0 +1,84 @@
+<wicket:extend>	
+		
+		
+	<h3>B&uacute;squeda</h3>
+			
+	<form wicket:id="form">
+			
+		<div>
+			<b><label for="nombre">Nombre: </label></b> 
+			<input type="text" wicket:id="nombre" name="nombre"/>
+		</div>
+		
+		<br>
+		
+		<div>
+			<b><label for="yacimiento">Yacimiento: </label></b> 
+			<select wicket:id="yacimiento" name="yacimiento"></select>
+		</div>
+		
+		<br>
+		
+		<div>
+			<input type="submit" wicket:id="limpiarButton" value="Limpiar">
+			<input type="submit" wicket:id="submitButton" value="Buscar">
+		</div>
+		
+	</form>
+	
+	<br>
+	
+	<h3>Listado</h3>	
+	
+	<div wicket:id="listViewContainer">
+	
+		<table>
+			<thead>
+				<tr>
+					<th scope="col">CID</th>
+					<th scope="col">Nombre</th>
+					<th scope="col">Yacimiento</th>
+					<th scope="col">Coor X</th>
+					<th scope="col">Coor Y</th>
+					<th scope="col">Coor Z</th>
+					<th scope="col">RKB</th>
+					<th scope="col">MR</th>
+					<th scope="col">Nivel de Referencia</th>
+					<th scope="col">Lin. Sism.</th>
+					<th scope="col">Pto. Exp.</th>
+					<th scope="col">Categor&iacute;a</th>
+					<th scope="col">Estado</th>
+					<th scope="col">Met. Extracci&oacute;n</th>
+					<th scope="col">Observaciones</th>
+				</tr>
+			</thead>
+			<tbody>
+				<tr wicket:id="pozosListView">
+					<td wicket:id="cidPozo"/>
+					<td wicket:id="nombrePozo"/>
+					<td wicket:id="yacimientoPozo"/>
+					<td wicket:id="coordenadaXPozo"/>
+					<td wicket:id="coordenadaYPozo"/>
+					<td wicket:id="coordenadaZPozo"/>
+					<td wicket:id="RKBPozo"/>
+					<td wicket:id="MRPozo"/>
+					<td wicket:id="nivelReferenciaPozo"/>
+					<td wicket:id="linSismPozo"/>
+					<td wicket:id="ptoExpPozo"/>
+					<td wicket:id="categoriaPozo"/>
+					<td wicket:id="estadoPozo"/>
+					<td wicket:id="metExtraccionPozo"/>
+					<td wicket:id="observacionesPozo"/>
+				</tr>
+			</tbody>
+			<tfoot>
+			    <tr>
+		    	    <td wicket:id="navigator" align="center" colspan="15" ></td>
+		        </tr>
+	       	</tfoot>
+		</table>
+	</div>
+	
+	<div wicket:id="mapaLeaflet"></div>
+		
+</wicket:extend>
