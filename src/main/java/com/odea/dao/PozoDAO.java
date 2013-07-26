@@ -32,7 +32,7 @@ public class PozoDAO extends AbstractDAO {
 	
     
     public List<Pozo> getPozos() {
-    	List<Pozo> pozos = jdbcTemplate.query("SELECT cid, nombre, yacim_id, coor_x, coor_y, coor_z, rkb, mr, nivel_ref, lin_sism, pto_exp, categoria, estado, met_extrac, observ FROM Pozo", new RowMapperPozo());
+    	List<Pozo> pozos = jdbcTemplate.query("SELECT cid, nombre, yacim_id, coor_x, coor_y, coor_z, rkb, mr, nivel_ref, lin_sism, pto_exp, categoria, estado, met_extrac, observ, posMapaX, posMapaY FROM Pozo", new RowMapperPozo());
     	
     	return pozos;
     }
@@ -43,7 +43,7 @@ public class PozoDAO extends AbstractDAO {
     	logger.debug("SE COMIENZA LA BUSQUEDA DE POZOS");
     	
     	ArrayList<Object> argumentos = new ArrayList<Object>();
-    	String sql = "SELECT cid, nombre, yacim_id, coor_x, coor_y, coor_z, rkb, mr, nivel_ref, lin_sism, pto_exp, categoria, estado, met_extrac, observ FROM Pozo WHERE 1 = 1 ";
+    	String sql = "SELECT cid, nombre, yacim_id, coor_x, coor_y, coor_z, rkb, mr, nivel_ref, lin_sism, pto_exp, categoria, estado, met_extrac, observ, posMapaX, posMapaY FROM Pozo WHERE 1 = 1 ";
     	
     	
     	//Nombre
@@ -92,6 +92,8 @@ public class PozoDAO extends AbstractDAO {
 			pozo.setEstado(rs.getString("estado"));
 			pozo.setMetExtraccion(rs.getString("met_extrac"));
 			pozo.setObservaciones(rs.getString("observ"));
+			pozo.setPosicionMapaX(rs.getDouble("posMapaX"));
+			pozo.setPosicionMapaY(rs.getDouble("posMapaY"));
 			
 			return pozo;
 		}

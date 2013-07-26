@@ -3,6 +3,7 @@ package com.odea;
 import java.util.List;
 
 import org.apache.wicket.ajax.AjaxRequestTarget;
+import org.apache.wicket.ajax.markup.html.AjaxLink;
 import org.apache.wicket.ajax.markup.html.form.AjaxButton;
 import org.apache.wicket.ajax.markup.html.navigation.paging.AjaxPagingNavigator;
 import org.apache.wicket.markup.html.WebMarkupContainer;
@@ -32,6 +33,7 @@ public class PozosPage extends BasePage {
 	
 	private WebMarkupContainer listViewContainer;
 	private IModel<List<Pozo>> lstPozosModel;
+	private MapaLeaflet mapa;
 	
 	private Pozo pozoBusqueda;
 	
@@ -73,7 +75,6 @@ public class PozosPage extends BasePage {
             	item.add(new Label("estadoPozo", new Model<String>(pozo.getEstado())));
             	item.add(new Label("metExtraccionPozo", new Model<String>(pozo.getMetExtraccion())));
             	item.add(new Label("observacionesPozo", new Model<String>(pozo.getObservaciones())));
-            	
             }
         };
         
@@ -108,6 +109,7 @@ public class PozosPage extends BasePage {
 				
 				target.add(form);
 				target.add(PozosPage.this.listViewContainer);
+				target.add(PozosPage.this.mapa);
 			}
         	
 		};
@@ -125,13 +127,23 @@ public class PozosPage extends BasePage {
 				PozosPage.this.pozoBusqueda = pozo;
 				
 				target.add(PozosPage.this.listViewContainer);
+				target.add(PozosPage.this.mapa);
 			}
         	
 		};
 		form.add(submitButton);
         
-		MapaLeaflet mapa = new MapaLeaflet("mapaLeaflet");
-		this.add(mapa);
+		this.mapa = new MapaLeaflet("mapaLeaflet") {
+
+			private static final long serialVersionUID = 1L;
+
+			@Override
+			protected List<Pozo> getDTO() {
+				return PozosPage.this.daoService.buscarPozos(PozosPage.this.pozoBusqueda);
+			}
+			
+		};
+		this.add(this.mapa);
 		
     }
 }

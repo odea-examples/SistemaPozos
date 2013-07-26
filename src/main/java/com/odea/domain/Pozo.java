@@ -21,7 +21,8 @@ public class Pozo implements Serializable {
 	private String estado;
 	private String metExtraccion;
 	private String observaciones;
-	
+	private Double posicionMapaX;
+	private Double posicionMapaY;
 	
 	@Override
 	public String toString() {
@@ -121,6 +122,18 @@ public class Pozo implements Serializable {
 	}
 	public void setObservaciones(String observaciones) {
 		this.observaciones = observaciones;
+	}
+	public Double getPosicionMapaX() {
+		return posicionMapaX;
+	}
+	public void setPosicionMapaX(Double posicionMapaX) {
+		this.posicionMapaX = posicionMapaX;
+	}
+	public Double getPosicionMapaY() {
+		return posicionMapaY;
+	}
+	public void setPosicionMapaY(Double posicionMapaY) {
+		this.posicionMapaY = posicionMapaY;
 	}
 	
 }
