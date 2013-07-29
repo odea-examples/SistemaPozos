@@ -6,9 +6,10 @@ public class Pozo implements Serializable {
 
 	private static final long serialVersionUID = 1L;
 
+	private Integer ID;
 	private String CID;
 	private String nombre;
-	private String yacimiento;
+	private Yacimiento yacimiento;
 	private Double coordenadaX;
 	private Double coordenadaY;
 	private Double coordenadaZ;
@@ -33,6 +34,12 @@ public class Pozo implements Serializable {
 	
 	//GETTERS & SETTERS
 	
+	public Integer getID() {
+		return ID;
+	}
+	public void setID(Integer iD) {
+		ID = iD;
+	}
 	public String getCID() {
 		return CID;
 	}
@@ -45,10 +52,10 @@ public class Pozo implements Serializable {
 	public void setNombre(String nombre) {
 		this.nombre = nombre;
 	}
-	public String getYacimiento() {
+	public Yacimiento getYacimiento() {
 		return yacimiento;
 	}
-	public void setYacimiento(String yacimiento) {
+	public void setYacimiento(Yacimiento yacimiento) {
 		this.yacimiento = yacimiento;
 	}
 	public Double getCoordenadaX() {

@@ -32,5 +32,17 @@ public class DAOService {
 	public List<Yacimiento> getYacimientos() {
 		return yacimientoDAO.getYacimientos();
 	}
+
+	public void altaPozo(Pozo pozo) {
+		pozoDAO.altaPozo(pozo);
+	}
+
+	public void bajaPozo(Pozo pozo) {
+		pozoDAO.bajaPozo(pozo);
+	}
+	
+	public void modificarPozo(Pozo pozo) {
+		pozoDAO.modificarPozo(pozo);
+	}
 	
 }

@@ -11,6 +11,7 @@ import org.springframework.jdbc.core.RowMapper;
 import org.springframework.stereotype.Repository;
 
 import com.odea.domain.Pozo;
+import com.odea.domain.Yacimiento;
 
 @Repository
 public class PozoDAO extends AbstractDAO {
@@ -32,7 +33,7 @@ public class PozoDAO extends AbstractDAO {
 	
     
     public List<Pozo> getPozos() {
-    	List<Pozo> pozos = jdbcTemplate.query("SELECT cid, nombre, yacim_id, coor_x, coor_y, coor_z, rkb, mr, nivel_ref, lin_sism, pto_exp, categoria, estado, met_extrac, observ, posMapaX, posMapaY FROM Pozo", new RowMapperPozo());
+    	List<Pozo> pozos = jdbcTemplate.query("SELECT p.ID, p.cid, p.nombre, p.yacim_id, p.coor_x, p.coor_y, p.coor_z, p.rkb, p.mr, p.nivel_ref, p.lin_sism, p.pto_exp, p.categoria, p.estado, p.met_extrac, p.observ, p.posMapaX, p.posMapaY, y.nombre FROM Pozo p, Yacimiento y WHERE p.yacim_id = y.ID", new RowMapperPozo());
     	
     	return pozos;
     }
@@ -43,29 +44,57 @@ public class PozoDAO extends AbstractDAO {
     	logger.debug("SE COMIENZA LA BUSQUEDA DE POZOS");
     	
     	ArrayList<Object> argumentos = new ArrayList<Object>();
-    	String sql = "SELECT cid, nombre, yacim_id, coor_x, coor_y, coor_z, rkb, mr, nivel_ref, lin_sism, pto_exp, categoria, estado, met_extrac, observ, posMapaX, posMapaY FROM Pozo WHERE 1 = 1 ";
-    	
-    	
-    	//Nombre
+    	String sql = "SELECT p.ID, p.cid, p.nombre, p.yacim_id, p.coor_x, p.coor_y, p.coor_z, p.rkb, p.mr, p.nivel_ref, p.lin_sism, p.pto_exp, p.categoria, p.estado, p.met_extrac, p.observ, p.posMapaX, p.posMapaY, y.nombre FROM Pozo p, Yacimiento y WHERE p.yacim_id = y.ID ";
+    	    	
     	if (pozo.getNombre() != null && !pozo.getNombre().equals("")) {
-    		sql += "AND nombre LIKE ? ";
+    		sql += "AND p.nombre LIKE ? ";
 			argumentos.add("%" + pozo.getNombre() + "%");
 		}
 
-    	
-    	//Yacimiento
-    	if (pozo.getYacimiento() != null && !pozo.getYacimiento().equals("")) {
-    		sql += "AND yacim_id = ? ";
-    		argumentos.add(pozo.getYacimiento());
+    	if (pozo.getYacimiento() != null) {
+    		sql += "AND p.yacim_id = ? ";
+    		argumentos.add(pozo.getYacimiento().getID());
     	}
     	
     	
-    	//Busqueda
     	List<Pozo> pozos = jdbcTemplate.query(sql, new RowMapperPozo(), argumentos.toArray());
     	
     	return pozos;
     }
     
+    
+    public void altaPozo(Pozo pozo) {
+    	
+    	String sql = "";
+    	sql += "INSERT INTO Pozo ";
+    	sql += "(cid, nombre, yacim_id, coor_x, coor_y, coor_z, rkb, mr, nivel_ref, lin_sism, pto_exp, categoria, estado, met_extrac, observ, posMapaX, posMapaY) ";
+    	sql += "VALUES ";
+    	sql += "(?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?)";
+    	
+    	jdbcTemplate.update(sql, pozo.getCID(), pozo.getNombre(), pozo.getYacimiento().getID(), pozo.getCoordenadaX(), pozo.getCoordenadaY(), pozo.getCoordenadaZ(), pozo.getRKB(), pozo.getMR(), pozo.getNivelReferencia(), pozo.getLinSism(), pozo.getPtoExp(), pozo.getCategoria(), pozo.getEstado(), pozo.getMetExtraccion(), pozo.getObservaciones(), pozo.getPosicionMapaX(), pozo.getPosicionMapaY());
+    	
+    	logger.debug("ALTA DE POZO - Nombre: " + pozo.getNombre());
+	}
+	
+	public void bajaPozo(Pozo pozo) {
+		
+		jdbcTemplate.update("DELETE FROM Pozo WHERE ID = ?", pozo.getID());
+		logger.debug("POZO BORRADO - ID: " + pozo.getID() + " - Nombre: " + pozo.getNombre());
+		
+	}
+	
+	public void modificarPozo(Pozo pozo) {
+
+		String sql = "";
+		sql += "UPDATE Pozo SET ";
+		sql += "cid = ?, nombre = ?, yacim_id = ?, coor_x = ?, coor_y = ?, coor_z = ?, rkb = ?, mr = ?, nivel_ref = ?, lin_sism = ?, pto_exp = ?, categoria = ?, estado = ?, met_extrac = ?, observ = ?, posMapaX = ?, posMapaY = ? ";
+		sql += "WHERE ID = ?";
+		
+		jdbcTemplate.update(sql, pozo.getCID(), pozo.getNombre(), pozo.getYacimiento().getID(), pozo.getCoordenadaX(), pozo.getCoordenadaY(), pozo.getCoordenadaZ(), pozo.getRKB(), pozo.getMR(), pozo.getNivelReferencia(), pozo.getLinSism(), pozo.getPtoExp(), pozo.getCategoria(), pozo.getEstado(), pozo.getMetExtraccion(), pozo.getObservaciones(), pozo.getPosicionMapaX(), pozo.getPosicionMapaY(), pozo.getID());
+		
+		logger.debug("POZO BORRADO - ID: " + pozo.getID());
+		
+	}
     
     
     //RowMappers
@@ -77,23 +106,29 @@ public class PozoDAO extends AbstractDAO {
 			
 			Pozo pozo = new Pozo();
 			
-			pozo.setCID(rs.getString("cid"));
-			pozo.setNombre(rs.getString("nombre"));
-			pozo.setYacimiento(rs.getString("yacim_id"));
-			pozo.setCoordenadaX(rs.getDouble("coor_x"));
-			pozo.setCoordenadaY(rs.getDouble("coor_y"));
-			pozo.setCoordenadaZ(rs.getDouble("coor_z"));
-			pozo.setRKB(rs.getDouble("rkb"));
-			pozo.setMR(rs.getDouble("mr"));
-			pozo.setNivelReferencia(rs.getInt("nivel_ref"));
-			pozo.setLinSism(rs.getString("lin_sism"));
-			pozo.setPtoExp(rs.getString("pto_exp"));
-			pozo.setCategoria(rs.getString("categoria"));
-			pozo.setEstado(rs.getString("estado"));
-			pozo.setMetExtraccion(rs.getString("met_extrac"));
-			pozo.setObservaciones(rs.getString("observ"));
-			pozo.setPosicionMapaX(rs.getDouble("posMapaX"));
-			pozo.setPosicionMapaY(rs.getDouble("posMapaY"));
+			pozo.setID(rs.getInt("p.ID"));
+			pozo.setCID(rs.getString("p.cid"));
+			pozo.setNombre(rs.getString("p.nombre"));
+			pozo.setCoordenadaX(rs.getDouble("p.coor_x"));
+			pozo.setCoordenadaY(rs.getDouble("p.coor_y"));
+			pozo.setCoordenadaZ(rs.getDouble("p.coor_z"));
+			pozo.setRKB(rs.getDouble("p.rkb"));
+			pozo.setMR(rs.getDouble("p.mr"));
+			pozo.setNivelReferencia(rs.getInt("p.nivel_ref"));
+			pozo.setLinSism(rs.getString("p.lin_sism"));
+			pozo.setPtoExp(rs.getString("p.pto_exp"));
+			pozo.setCategoria(rs.getString("p.categoria"));
+			pozo.setEstado(rs.getString("p.estado"));
+			pozo.setMetExtraccion(rs.getString("p.met_extrac"));
+			pozo.setObservaciones(rs.getString("p.observ"));
+			pozo.setPosicionMapaX(rs.getDouble("p.posMapaX"));
+			pozo.setPosicionMapaY(rs.getDouble("p.posMapaY"));
+			
+			Yacimiento yacimiento = new Yacimiento();
+			yacimiento.setID(rs.getString("p.yacim_id"));
+			yacimiento.setNombre(rs.getString("y.nombre"));
+			
+			pozo.setYacimiento(yacimiento);
 			
 			return pozo;
 		}

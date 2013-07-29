@@ -22,7 +22,10 @@ public class WicketApplication extends WebApplication
 		super.init();
 		
 		this.mountPage("PozosPage", PozosPage.class);
-			
+		this.mountPage("ListadoPozosPage", ListadoPozosPage.class);
+		
+		this.mountPage("EditarPozoPage", AltaPozoPage.class);
+		
         getComponentInstantiationListeners().add(new SpringComponentInjector(this));
         
 	}
