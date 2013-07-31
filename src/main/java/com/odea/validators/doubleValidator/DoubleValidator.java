@@ -10,7 +10,7 @@ public class DoubleValidator implements IValidator<Double> {
 	
 	private static final long serialVersionUID = 1L;
 	
-	private final String DOUBLE_PATTERN = "^([0-9]{1,6}((,|.)[0-9]{1,6}|\\b))$";
+	private final String DOUBLE_PATTERN = "[-+]?[0-9]{1,10}\\.[0-9]{1,10}";
 	private final Pattern duracionPattern;
 	private String componente;
 	
@@ -25,7 +25,7 @@ public class DoubleValidator implements IValidator<Double> {
 		String strDuracion = validatable.getValue().toString(); 	
 		
 		if (!duracionPattern.matcher(strDuracion).matches()) {	
-			this.error(validatable, "Campo '" + this.componente + "' debe ser un número que contenga como máximo 6 cifras enteras y 6 cifras decimales.");
+			this.error(validatable, "Campo '" + this.componente + "' debe ser un número que contenga como máximo 10 cifras enteras y 10 cifras decimales.");
 		}
 	}
 	
