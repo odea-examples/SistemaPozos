@@ -24,9 +24,10 @@ public class WicketApplication extends WebApplication
 		this.mountPage("PozosPage", PozosPage.class);
 		this.mountPage("ListadoPozosPage", ListadoPozosPage.class);
 		
-		this.mountPage("EditarPozoPage", AltaPozoPage.class);
+		this.mountPage("AltaPozoPage", AltaPozoPage.class);
+		this.mountPage("ModificarPozoPage", ModificarPozoPage.class);
 		
-        getComponentInstantiationListeners().add(new SpringComponentInjector(this));
+        this.getComponentInstantiationListeners().add(new SpringComponentInjector(this));
         
 	}
 }

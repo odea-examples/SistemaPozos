@@ -1,39 +1,55 @@
+<wicket:head>
+
+	<style type='text/css'>
+		label { float: left; width: 80px; }
+		input[type=text] { width: 150px; }
+		select { width: 150px; }
+	</style>
+	
+</wicket:head>
+
 <wicket:extend>			
 	
-	<h3>B&uacute;squeda</h3>
+	<div style="position: relative; min-width: 1300px; min-height: 300px;">
+		
+				
+		<form wicket:id="form">
+		
+			<h3>B&uacute;squeda</h3>
+				
+			<div>
+				<b><label for="nombre">Nombre: </label></b> 
+				<input type="text" wicket:id="nombre" name="nombre"/>
+			</div>
 			
-	<form wicket:id="form">
+			<br>
 			
-		<div>
-			<b><label for="nombre">Nombre: </label></b> 
-			<input type="text" wicket:id="nombre" name="nombre"/>
-		</div>
+			<div>
+				<b><label for="yacimiento">Yacimiento: </label></b> 
+				<select wicket:id="yacimiento" name="yacimiento"></select>
+			</div>
+			
+			<br>
+			
+			<div>
+				<input type="submit" wicket:id="limpiarButton" value="Limpiar">
+				<input type="submit" wicket:id="submitButton" value="Buscar">
+			</div>
+			
+		</form>
 		
 		<br>
 		
-		<div>
-			<b><label for="yacimiento">Yacimiento: </label></b> 
-			<select wicket:id="yacimiento" name="yacimiento"></select>
-		</div>
+		<div wicket:id="mapaLeaflet" style="position:absolute; top:0px; left:600px;"></div>
 		
-		<br>
-		
-		<div>
-			<input type="submit" wicket:id="limpiarButton" value="Limpiar">
-			<input type="submit" wicket:id="submitButton" value="Buscar">
-		</div>
-		
-	</form>
-	
-	<br>
-	
+	</div>
 	
 		
-	<div wicket:id="listViewContainer" >
+	<div wicket:id="listViewContainer">
 	
 		<h3>Listado</h3>	
 		
-		<table>
+		<table style="position: relative; top:0px; left:-50px;">
 			<thead>
 				<tr>
 					<th scope="col">CID</th>
@@ -55,22 +71,21 @@
 			</thead>
 			<tbody>
 				<tr wicket:id="pozosListView">
-					<td wicket:id="cidPozo"/>
-					<td wicket:id="nombrePozo"/>
+					<td wicket:id="cidPozo" style="min-width:50px"/>
+					<td wicket:id="nombrePozo" style="min-width:120px"/>
 					<td wicket:id="yacimientoPozo"/>
-					<td wicket:id="coordenadaXPozo"/>
-					<td wicket:id="coordenadaYPozo"/>
-					<td wicket:id="coordenadaZPozo"/>
+					<td wicket:id="coordenadaXPozo" style="min-width:70px"/>
+					<td wicket:id="coordenadaYPozo" style="min-width:70px"/>
+					<td wicket:id="coordenadaZPozo" style="min-width:70px"/>
 					<td wicket:id="RKBPozo"/>
 					<td wicket:id="MRPozo"/>
 					<td wicket:id="nivelReferenciaPozo"/>
-					<td wicket:id="linSismPozo"/>
-					<td wicket:id="ptoExpPozo"/>
-					<td wicket:id="categoriaPozo"/>
-					<td wicket:id="estadoPozo"/>
+					<td wicket:id="linSismPozo" style="min-width:50px"/>
+					<td wicket:id="ptoExpPozo" style="min-width:50px"/>
+					<td wicket:id="categoriaPozo" style="min-width:80px"/>
+					<td wicket:id="estadoPozo" style="min-width:80px"/>
 					<td wicket:id="metExtraccionPozo"/>
-					<td wicket:id="observacionesPozo"/>
-					
+					<td wicket:id="observacionesPozo" style="min-width:120px"/>
 				</tr>
 			</tbody>
 			<tfoot>
@@ -81,6 +96,6 @@
 		</table>
 	</div>
 	
-	<div wicket:id="mapaLeaflet"></div>
-		
+	
+	
 </wicket:extend>

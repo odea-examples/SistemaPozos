@@ -53,6 +53,7 @@ public abstract class EditarPozoPage extends BasePage {
 		Form<Pozo> form = new Form<Pozo>("form", new CompoundPropertyModel<Pozo>(pozo));
 		this.add(form);
 		
+		
 		/*Panel de errores*/
 		
 		final FeedbackPanel feedbackPanel = new FeedbackPanel("feedbackPanel");
@@ -88,7 +89,6 @@ public abstract class EditarPozoPage extends BasePage {
 		coordenadaY.setLabel(Model.of("Coordenada Y"));
 		coordenadaY.add(new DoubleValidator(coordenadaY.getLabel().getObject()));
 		coordenadaY.add(new OnlyDoubleBehavior(coordenadaY.getMarkupId()));
-		
 		form.add(coordenadaY);
 
 		RequiredTextField<Double> coordenadaZ = new RequiredTextField<Double>("coordenadaZ");
@@ -154,6 +154,7 @@ public abstract class EditarPozoPage extends BasePage {
 		TextArea<String> observaciones = new TextArea<String>("observaciones");
 		observaciones.setLabel(Model.of("Observaciones"));
 		observaciones.add(new StringValidator(0,5000));
+		observaciones.setRequired(true);
 		form.add(observaciones);
 		
 		
