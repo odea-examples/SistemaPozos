@@ -1,138 +1,153 @@
+<wicket:head>
+
+	<style type='text/css'>
+		label { float: left; width: 120px; }
+		input[type=text] { width: 200px; }
+		select { width: 200px; }
+	</style>
+	
+</wicket:head>
+
 <wicket:extend>
 
 	<h4><a wicket:id="linkVolver" href="#" class="nav">Volver al Listado</a></h4>
-	<br>
-	
 	
 	<h3>Editar un Pozo</h3>
 	<br>
 
-	<form wicket:id="form">			
+	<div>
 	
-		<div wicket:id="feedbackPanel" style="position: absolute; left: 400px; top: 237px;"></div>
+		<form wicket:id="form" style="position: relative; min-width: 1300px; min-height: 300px;">			
+			
+			<div wicket:id="feedbackPanel" style="position: absolute; left: 800px; top: 0px;"></div>
+			
+			<div>
+			
+				<div style="position:absolute; top:0px; left:0px;">
+					<b><label for="CID" align="left">CID:</label></b> 
+					<input type="text" wicket:id="CID" name="CID" align="right"/>
+				</div>
+				
+				<br>
+				
+				<div style="position:absolute; top:40px; left:0px;">
+					<b><label for="nombre">Nombre: </label></b> 
+					<input type="text" wicket:id="nombre" name="nombre"/>
+				</div>
+				
+				<br>
+				
+				<div style="position:absolute; top:80px; left:0px;">
+					<b><label for="yacimiento">Yacimiento: </label></b>
+					<select wicket:id="yacimiento" name="yacimiento"></select>
+				</div>
+				
+				<br>
+				
+				<div style="position:absolute; top:120px; left:0px;"> 
+					<b><label for="coordenadaX">Coordenada X: </label></b> 
+					<input type="text" wicket:id="coordenadaX" name="coordenadaX"/>
+				</div>
+				
+				<br>
+				
+				<div style="position:absolute; top:160px; left:0px;">
+					<b><label for="coordenadaY">Coordenada Y: </label></b> 
+					<input type="text" wicket:id="coordenadaY" name="coordenadaY"/>
+				</div>
+				
+				<br>
+				
+				<div style="position:absolute; top:200px; left:0px;">
+					<b><label for="coordenadaZ">Coordenada Z: </label></b> 
+					<input type="text" wicket:id="coordenadaZ" name="coordenadaZ"/>
+				</div>
+				
+				<br>
+				
+				<div style="position:absolute; top:240px; left:0px;">
+					<b><label for="RKB">RKB: </label></b> 
+					<input type="text" wicket:id="RKB" name="RKB"/>
+				</div>
+				
+				<br>
+				
+				<div style="position:absolute; top:280px; left:0px;">
+					<b><label for="MR">MR: </label></b> 
+					<input type="text" wicket:id="MR" name="MR"/>
+				</div>
+				
+				<br>
+				
+				<div style="position:absolute; top:320px; left:0px;">
+					<b><label for="nivelReferencia">Nivel de Referencia: </label></b> 
+					<input type="text" wicket:id="nivelReferencia" name="nivelReferencia"/>
+				</div>
+				
+				<br>
+				
+				<div style="position:absolute; top:360px; left:0px;">
+					<b><label for="linSism">Lin. Sism: </label></b> 
+					<input type="text" wicket:id="linSism" name="linSism"/>
+				</div>
+				
+				<br>
+				
+				<div style="position:absolute; top:0px; left:400px;">
+					<b><label for="ptoExp">Pto. Exp: </label></b> 
+					<input type="text" wicket:id="ptoExp" name="ptoExp"/>
+				</div>
+				
+				<br>
+				
+				<div style="position:absolute; top:40px; left:400px;">
+					<b><label for="categoria">Categor&iacute;a: </label></b> 
+					<input type="text" wicket:id="categoria" name="categoria"/>
+				</div>
+				
+				<br>
+				
+				<div style="position:absolute; top:80px; left:400px;">
+					<b><label for="estado">Estado: </label></b> 
+					<input type="text" wicket:id="estado" name="estado"/>
+				</div>
+				
+				<br>
+				
+				<div style="position:absolute; top:120px; left:400px;">
+					<b><label for="metExtraccion">Met. Extracci&oacute;n: </label></b> 
+					<input type="text" wicket:id="metExtraccion" name="metExtraccion"/>
+				</div>
+				
+				<br>
+				
+				<div style="position:absolute; top:160px; left:400px;">
+					<b><label for="posicionMapaX">Posici&oacute;n Mapa - X: </label></b> 
+					<input type="text" wicket:id="posicionMapaX" name="posicionMapaX"/>
+				</div>
+				
+				<br>
+				
+				<div style="position:absolute; top:200px; left:400px;">
+					<b><label for="posicionMapaY">Posici&oacute;n Mapa - Y: </label></b> 
+					<input type="text" wicket:id="posicionMapaY" name="posicionMapaY"/>
+				</div>
+				
+				<br>
+				
+				<div style="position:absolute; top:240px; left:400px;">
+					<b><label for="observaciones">Observaciones: </label></b> 
+					<textarea type="text" wicket:id="observaciones" name="observaciones" rows="6" cols="26" scrolling="yes" style="max-width:200px; max-height:100px; min-width:200px; min-height:100px;"/>
+				</div>
+				
+				<br>
+				
+				
+				<input type="submit" wicket:id="submitButton" value="Guardar" style="position:absolute; top:360px; left:650px;"/>
+				
+			</div>	
+		</form>
 		
-		<div>
-			<b><label for="CID">CID: </label></b> 
-			<input type="text" wicket:id="CID" name="CID"/>
-		</div>
-		
-		<br>
-		
-		<div>
-			<b><label for="nombre">Nombre: </label></b> 
-			<input type="text" wicket:id="nombre" name="nombre"/>
-		</div>
-		
-		<br>
-		
-		<div>
-			<b><label for="yacimiento">Yacimiento: </label></b>
-			<select wicket:id="yacimiento" name="yacimiento"></select>
-		</div>
-		
-		<br>
-		
-		<div>
-			<b><label for="coordenadaX">Coordenada X: </label></b> 
-			<input type="text" wicket:id="coordenadaX" name="coordenadaX"/>
-		</div>
-		
-		<br>
-		
-		<div>
-			<b><label for="coordenadaY">Coordenada Y: </label></b> 
-			<input type="text" wicket:id="coordenadaY" name="coordenadaY"/>
-		</div>
-		
-		<br>
-		
-		<div>
-			<b><label for="coordenadaZ">Coordenada Z: </label></b> 
-			<input type="text" wicket:id="coordenadaZ" name="coordenadaZ"/>
-		</div>
-		
-		<br>
-		
-		<div>
-			<b><label for="RKB">RKB: </label></b> 
-			<input type="text" wicket:id="RKB" name="RKB"/>
-		</div>
-		
-		<br>
-		
-		<div>
-			<b><label for="MR">MR: </label></b> 
-			<input type="text" wicket:id="MR" name="MR"/>
-		</div>
-		
-		<br>
-		
-		<div>
-			<b><label for="nivelReferencia">Nivel de Referencia: </label></b> 
-			<input type="text" wicket:id="nivelReferencia" name="nivelReferencia"/>
-		</div>
-		
-		<br>
-		
-		<div>
-			<b><label for="linSism">Lin. Sism: </label></b> 
-			<input type="text" wicket:id="linSism" name="linSism"/>
-		</div>
-		
-		<br>
-		
-		<div>
-			<b><label for="ptoExp">Pto. Exp: </label></b> 
-			<input type="text" wicket:id="ptoExp" name="ptoExp"/>
-		</div>
-		
-		<br>
-		
-		<div>
-			<b><label for="categoria">Categor&iacute;a: </label></b> 
-			<input type="text" wicket:id="categoria" name="categoria"/>
-		</div>
-		
-		<br>
-		
-		<div>
-			<b><label for="estado">Estado: </label></b> 
-			<input type="text" wicket:id="estado" name="estado"/>
-		</div>
-		
-		<br>
-		
-		<div>
-			<b><label for="metExtraccion">Met. Extracci&oacute;n: </label></b> 
-			<input type="text" wicket:id="metExtraccion" name="metExtraccion"/>
-		</div>
-		
-		<br>
-		
-		<div>
-			<b><label for="observaciones">Observaciones: </label></b> 
-			<input type="text" wicket:id="observaciones" name="observaciones"/>
-		</div>
-		
-		<br>
-		
-		<div>
-			<b><label for="posicionMapaX">Posici&oacute;n Mapa - X: </label></b> 
-			<input type="text" wicket:id="posicionMapaX" name="posicionMapaX"/>
-		</div>
-		
-		<br>
-		
-		<div>
-			<b><label for="posicionMapaY">Posici&oacute;n Mapa - Y: </label></b> 
-			<input type="text" wicket:id="posicionMapaY" name="posicionMapaY"/>
-		</div>
-		
-		<br>
-		
-		
-		<input type="submit" wicket:id="submitButton" value="Guardar"/>
-		
-	</form>
+	</div>
 	
 </wicket:extend>
