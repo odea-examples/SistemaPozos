@@ -58,11 +58,11 @@ public class ListadoPozosPage extends BasePage {
             	item.add(new Label("cidPozo", new Model<String>(pozo.getCID())));
             	item.add(new Label("nombrePozo", new Model<String>(pozo.getNombre())));
             	item.add(new Label("yacimientoPozo", new Model<Yacimiento>(pozo.getYacimiento())));
-            	item.add(new Label("coordenadaXPozo", new Model<String>(pozo.getCoordenadaX())));
-            	item.add(new Label("coordenadaYPozo", new Model<String>(pozo.getCoordenadaY())));
-            	item.add(new Label("coordenadaZPozo", new Model<String>(pozo.getCoordenadaZ())));
-            	item.add(new Label("RKBPozo", new Model<String>(pozo.getRKB())));
-            	item.add(new Label("MRPozo", new Model<String>(pozo.getMR())));
+            	item.add(new Label("coordenadaXPozo", new Model<Double>(pozo.getCoordenadaX())));
+            	item.add(new Label("coordenadaYPozo", new Model<Double>(pozo.getCoordenadaY())));
+            	item.add(new Label("coordenadaZPozo", new Model<Double>(pozo.getCoordenadaZ())));
+            	item.add(new Label("RKBPozo", new Model<Double>(pozo.getRKB())));
+            	item.add(new Label("MRPozo", new Model<Double>(pozo.getMR())));
             	item.add(new Label("nivelReferenciaPozo", new Model<Integer>(pozo.getNivelReferencia())));
             	item.add(new Label("linSismPozo", new Model<String>(pozo.getLinSism())));
             	item.add(new Label("ptoExpPozo", new Model<String>(pozo.getPtoExp())));

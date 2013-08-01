@@ -6,11 +6,11 @@ import org.apache.wicket.validation.IValidatable;
 import org.apache.wicket.validation.IValidator;
 import org.apache.wicket.validation.ValidationError;
 
-public class DoubleValidator implements IValidator<String> {
+public class DoubleValidator implements IValidator<Double> {
 	
 	private static final long serialVersionUID = 1L;
 	
-	private final String DOUBLE_PATTERN = "[-+]?[0-9]*(\\.[0-9]+([eE][-+]?[0-9]{1,2})?)?";
+	private final String DOUBLE_PATTERN = "[-+]?[0-9]*\\.?[0-9]+";
 	private final Pattern duracionPattern;
 	private String componente;
 	
@@ -21,15 +21,15 @@ public class DoubleValidator implements IValidator<String> {
 	}
 
 	@Override
-	public void validate(IValidatable<String> validatable) {
-		String strDuracion = validatable.getValue(); 	
+	public void validate(IValidatable<Double> validatable) {
+		Double valor = validatable.getValue();
 		
-		if (!duracionPattern.matcher(strDuracion).matches()) {	
-			this.error(validatable, "Campo '" + this.componente + "' debe tener formato '000.0000'. El número puede ocupar hasta 10 espacios en total.");
+		if (!duracionPattern.matcher(valor.toString()).matches()) {	
+			this.error(validatable, "El campo '" + this.componente + "' tiene formato incorrecto.");
 		}
 	}
 	
-	private void error(IValidatable<String> validatable, String errorKey) {
+	private void error(IValidatable<Double> validatable, String errorKey) {
 		ValidationError error = new ValidationError();
 		error.addKey(getClass().getSimpleName() + "." + errorKey);
 		error.setMessage(errorKey);

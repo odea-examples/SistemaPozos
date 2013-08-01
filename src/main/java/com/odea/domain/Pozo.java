@@ -10,11 +10,11 @@ public class Pozo implements Serializable {
 	private String CID;
 	private String nombre;
 	private Yacimiento yacimiento;
-	private String coordenadaX;
-	private String coordenadaY;
-	private String coordenadaZ;
-	private String RKB;
-	private String MR;
+	private Double coordenadaX;
+	private Double coordenadaY;
+	private Double coordenadaZ;
+	private Double RKB;
+	private Double MR;
 	private Integer nivelReferencia;
 	private String linSism;
 	private String ptoExp;
@@ -22,8 +22,8 @@ public class Pozo implements Serializable {
 	private String estado;
 	private String metExtraccion;
 	private String observaciones;
-	private String posicionMapaX;
-	private String posicionMapaY;
+	private Double posicionMapaX;
+	private Double posicionMapaY;
 	
 	
 	@Override
@@ -59,34 +59,34 @@ public class Pozo implements Serializable {
 	public void setYacimiento(Yacimiento yacimiento) {
 		this.yacimiento = yacimiento;
 	}
-	public String getCoordenadaX() {
+	public Double getCoordenadaX() {
 		return coordenadaX;
 	}
-	public void setCoordenadaX(String coordenadaX) {
+	public void setCoordenadaX(Double coordenadaX) {
 		this.coordenadaX = coordenadaX;
 	}
-	public String getCoordenadaY() {
+	public Double getCoordenadaY() {
 		return coordenadaY;
 	}
-	public void setCoordenadaY(String coordenadaY) {
+	public void setCoordenadaY(Double coordenadaY) {
 		this.coordenadaY = coordenadaY;
 	}
-	public String getCoordenadaZ() {
+	public Double getCoordenadaZ() {
 		return coordenadaZ;
 	}
-	public void setCoordenadaZ(String coordenadaZ) {
+	public void setCoordenadaZ(Double coordenadaZ) {
 		this.coordenadaZ = coordenadaZ;
 	}
-	public String getRKB() {
+	public Double getRKB() {
 		return RKB;
 	}
-	public void setRKB(String rKB) {
+	public void setRKB(Double rKB) {
 		RKB = rKB;
 	}
-	public String getMR() {
+	public Double getMR() {
 		return MR;
 	}
-	public void setMR(String mR) {
+	public void setMR(Double mR) {
 		MR = mR;
 	}
 	public Integer getNivelReferencia() {
@@ -131,16 +131,16 @@ public class Pozo implements Serializable {
 	public void setObservaciones(String observaciones) {
 		this.observaciones = observaciones;
 	}
-	public String getPosicionMapaX() {
+	public Double getPosicionMapaX() {
 		return posicionMapaX;
 	}
-	public void setPosicionMapaX(String posicionMapaX) {
+	public void setPosicionMapaX(Double posicionMapaX) {
 		this.posicionMapaX = posicionMapaX;
 	}
-	public String getPosicionMapaY() {
+	public Double getPosicionMapaY() {
 		return posicionMapaY;
 	}
-	public void setPosicionMapaY(String posicionMapaY) {
+	public void setPosicionMapaY(Double posicionMapaY) {
 		this.posicionMapaY = posicionMapaY;
 	}
 	

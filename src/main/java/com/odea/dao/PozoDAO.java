@@ -109,11 +109,11 @@ public class PozoDAO extends AbstractDAO {
 			pozo.setID(rs.getInt("p.ID"));
 			pozo.setCID(rs.getString("p.cid"));
 			pozo.setNombre(rs.getString("p.nombre"));
-			pozo.setCoordenadaX(rs.getString("p.coor_x"));
-			pozo.setCoordenadaY(rs.getString("p.coor_y"));
-			pozo.setCoordenadaZ(rs.getString("p.coor_z"));
-			pozo.setRKB(rs.getString("p.rkb"));
-			pozo.setMR(rs.getString("p.mr"));
+			pozo.setCoordenadaX(rs.getDouble("p.coor_x"));
+			pozo.setCoordenadaY(rs.getDouble("p.coor_y"));
+			pozo.setCoordenadaZ(rs.getDouble("p.coor_z"));
+			pozo.setRKB(rs.getDouble("p.rkb"));
+			pozo.setMR(rs.getDouble("p.mr"));
 			pozo.setNivelReferencia(rs.getInt("p.nivel_ref"));
 			pozo.setLinSism(rs.getString("p.lin_sism"));
 			pozo.setPtoExp(rs.getString("p.pto_exp"));
@@ -121,8 +121,8 @@ public class PozoDAO extends AbstractDAO {
 			pozo.setEstado(rs.getString("p.estado"));
 			pozo.setMetExtraccion(rs.getString("p.met_extrac"));
 			pozo.setObservaciones(rs.getString("p.observ"));
-			pozo.setPosicionMapaX(rs.getString("p.posMapaX"));
-			pozo.setPosicionMapaY(rs.getString("p.posMapaY"));
+			pozo.setPosicionMapaX(rs.getDouble("p.posMapaX"));
+			pozo.setPosicionMapaY(rs.getDouble("p.posMapaY"));
 			
 			Yacimiento yacimiento = new Yacimiento();
 			yacimiento.setID(rs.getString("p.yacim_id"));
