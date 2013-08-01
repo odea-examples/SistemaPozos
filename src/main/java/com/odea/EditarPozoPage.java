@@ -79,31 +79,31 @@ public abstract class EditarPozoPage extends BasePage {
     	yacimiento.setRequired(true);
     	form.add(yacimiento);
 		
-		RequiredTextField<Double> coordenadaX = new RequiredTextField<Double>("coordenadaX");
+		RequiredTextField<String> coordenadaX = new RequiredTextField<String>("coordenadaX");
 		coordenadaX.setLabel(Model.of("Coordenada X"));
 		coordenadaX.add(new DoubleValidator(coordenadaX.getLabel().getObject()));
 		coordenadaX.add(new OnlyDoubleBehavior(coordenadaX.getMarkupId()));
 		form.add(coordenadaX);
 		
-		RequiredTextField<Double> coordenadaY = new RequiredTextField<Double>("coordenadaY");
+		RequiredTextField<String> coordenadaY = new RequiredTextField<String>("coordenadaY");
 		coordenadaY.setLabel(Model.of("Coordenada Y"));
 		coordenadaY.add(new DoubleValidator(coordenadaY.getLabel().getObject()));
 		coordenadaY.add(new OnlyDoubleBehavior(coordenadaY.getMarkupId()));
 		form.add(coordenadaY);
 
-		RequiredTextField<Double> coordenadaZ = new RequiredTextField<Double>("coordenadaZ");
+		RequiredTextField<String> coordenadaZ = new RequiredTextField<String>("coordenadaZ");
 		coordenadaZ.setLabel(Model.of("Coordenada Z"));
 		coordenadaZ.add(new DoubleValidator(coordenadaZ.getLabel().getObject()));
 		coordenadaZ.add(new OnlyDoubleBehavior(coordenadaZ.getMarkupId()));
 		form.add(coordenadaZ);
 		
-		RequiredTextField<Double> rkb = new RequiredTextField<Double>("RKB");
+		RequiredTextField<String> rkb = new RequiredTextField<String>("RKB");
 		rkb.setLabel(Model.of("RKB"));
 		rkb.add(new DoubleValidator(rkb.getLabel().getObject()));
 		rkb.add(new OnlyDoubleBehavior(rkb.getMarkupId()));
 		form.add(rkb);
 		
-		RequiredTextField<Double> mr = new RequiredTextField<Double>("MR");
+		RequiredTextField<String> mr = new RequiredTextField<String>("MR");
 		mr.setLabel(Model.of("MR"));
 		mr.add(new DoubleValidator(mr.getLabel().getObject()));
 		mr.add(new OnlyDoubleBehavior(mr.getMarkupId()));
@@ -139,13 +139,13 @@ public abstract class EditarPozoPage extends BasePage {
 		metExtraccion.add(new StringValidator(0,30));
 		form.add(metExtraccion);
 		
-		RequiredTextField<Double> posMapaX = new RequiredTextField<Double>("posicionMapaX");
+		RequiredTextField<String> posMapaX = new RequiredTextField<String>("posicionMapaX");
 		posMapaX.setLabel(Model.of("Posición mapa - X"));
 		posMapaX.add(new DoubleValidator(posMapaX.getLabel().getObject()));
 		posMapaX.add(new OnlyDoubleBehavior(posMapaX.getMarkupId()));
 		form.add(posMapaX);
 		
-		RequiredTextField<Double> posMapaY = new RequiredTextField<Double>("posicionMapaY");
+		RequiredTextField<String> posMapaY = new RequiredTextField<String>("posicionMapaY");
 		posMapaY.setLabel(Model.of("Posición mapa - Y"));
 		posMapaY.add(new DoubleValidator(posMapaY.getLabel().getObject()));
 		posMapaY.add(new OnlyDoubleBehavior(posMapaY.getMarkupId()));
@@ -153,7 +153,7 @@ public abstract class EditarPozoPage extends BasePage {
 		
 		TextArea<String> observaciones = new TextArea<String>("observaciones");
 		observaciones.setLabel(Model.of("Observaciones"));
-		observaciones.add(new StringValidator(0,5000));
+		observaciones.add(new StringValidator(0,500));
 		observaciones.setRequired(true);
 		form.add(observaciones);
 		
