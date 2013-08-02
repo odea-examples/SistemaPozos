@@ -1,0 +1,28 @@
+
+
+#left {
+	float:left;
+}
+
+#formularioPozos form {
+	position: relative;
+	width: 100%;
+	float: left;
+}
+
+#formularioPozos form #formInputs{
+	float:left;
+	width: 50%;
+}
+
+#formularioPozos form #observaciones{
+	float: left;
+	width: 25%;
+	height: 190px;
+}
+
+#formularioPozos form #guardarSubmit{
+	position:relative;
+	float: left;
+	margin-left: 10%;
+}

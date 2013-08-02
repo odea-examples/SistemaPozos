@@ -32,13 +32,14 @@ tr.odd .column1	{
 	}	
 .column1	{
 	background:#f9fcfe;
-	}
+	}		
+
 td {
 	color:#678197;
 	border-bottom:1px solid #e5eff8;
 	border-left:1px solid #e5eff8;
-	text-align:center;
-	}				
+	text-align:right;
+	}
 th {
 	font-weight:normal;
 	color: #678197;
@@ -49,7 +50,7 @@ th {
 thead th {
 	background:#f4f9fe;
 	text-align:center;
-	font:bold 1.2em/2em "Century Gothic","Trebuchet MS",Arial,Helvetica,sans-serif;
+	font:1.1em "Century Gothic","Trebuchet MS",Arial,Helvetica,sans-serif;
 	color:#66a3d3
 	}	
 tfoot th {
@@ -66,4 +67,10 @@ tfoot th em {
 	font-weight: bold;
 	font-size: 1.1em;
 	font-style: normal;
-	}	
+	}
+tfoot tr td {
+	color:#678197;
+	border-bottom:1px solid #e5eff8;
+	border-left:1px solid #e5eff8;
+	text-align:center;
+}	

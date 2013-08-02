@@ -10,7 +10,6 @@ public class AltaPozoPage extends EditarPozoPage {
 	public AltaPozoPage() {
 		
 		Pozo pozo = new Pozo();
-		pozo.setID(0);
 		
 		this.preparePage(pozo);
 	}

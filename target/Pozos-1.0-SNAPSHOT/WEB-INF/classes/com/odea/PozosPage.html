@@ -1,0 +1,101 @@
+<wicket:head>
+
+	<style type='text/css'>
+		label { float: left; width: 80px; }
+		input[type=text] { width: 150px; }
+		select { width: 150px; }
+	</style>
+	
+</wicket:head>
+
+<wicket:extend>			
+	
+	<div style="position: relative; min-width: 1300px; min-height: 300px;">
+		
+				
+		<form wicket:id="form">
+		
+			<h3>B&uacute;squeda</h3>
+				
+			<div>
+				<b><label for="nombre">Nombre: </label></b> 
+				<input type="text" wicket:id="nombre" name="nombre"/>
+			</div>
+			
+			<br>
+			
+			<div>
+				<b><label for="yacimiento">Yacimiento: </label></b> 
+				<select wicket:id="yacimiento" name="yacimiento"></select>
+			</div>
+			
+			<br>
+			
+			<div>
+				<input type="submit" wicket:id="limpiarButton" value="Limpiar">
+				<input type="submit" wicket:id="submitButton" value="Buscar">
+			</div>
+			
+		</form>
+		
+		<br>
+		
+		<div wicket:id="mapaLeaflet" style="position:absolute; top:0px; left:600px;"></div>
+		
+	</div>
+	
+		
+	<div wicket:id="listViewContainer">
+	
+		<h3>Listado</h3>	
+		
+		<table style="position: relative; top:0px; left:-50px;">
+			<thead>
+				<tr>
+					<th scope="col">CID</th>
+					<th scope="col">Nombre</th>
+					<th scope="col">Yacimiento</th>
+					<th scope="col">Coor X</th>
+					<th scope="col">Coor Y</th>
+					<th scope="col">Coor Z</th>
+					<th scope="col">RKB</th>
+					<th scope="col">MR</th>
+					<th scope="col">Nivel de Referencia</th>
+					<th scope="col">Lin. Sism.</th>
+					<th scope="col">Pto. Exp.</th>
+					<th scope="col">Categor&iacute;a</th>
+					<th scope="col">Estado</th>
+					<th scope="col">Met. Extracci&oacute;n</th>
+					<th scope="col">Observaciones</th>
+				</tr>
+			</thead>
+			<tbody>
+				<tr wicket:id="pozosListView">
+					<td wicket:id="cidPozo" style="min-width:50px"/>
+					<td wicket:id="nombrePozo" style="min-width:120px"/>
+					<td wicket:id="yacimientoPozo"/>
+					<td wicket:id="coordenadaXPozo" style="min-width:70px"/>
+					<td wicket:id="coordenadaYPozo" style="min-width:70px"/>
+					<td wicket:id="coordenadaZPozo" style="min-width:70px"/>
+					<td wicket:id="RKBPozo"/>
+					<td wicket:id="MRPozo"/>
+					<td wicket:id="nivelReferenciaPozo"/>
+					<td wicket:id="linSismPozo" style="min-width:50px"/>
+					<td wicket:id="ptoExpPozo" style="min-width:50px"/>
+					<td wicket:id="categoriaPozo" style="min-width:80px"/>
+					<td wicket:id="estadoPozo" style="min-width:80px"/>
+					<td wicket:id="metExtraccionPozo"/>
+					<td wicket:id="observacionesPozo" style="min-width:120px"/>
+				</tr>
+			</tbody>
+			<tfoot>
+			    <tr>
+		    	    <td wicket:id="navigator" align="center" colspan="15" ></td>
+		        </tr>
+	       	</tfoot>
+		</table>
+	</div>
+	
+	
+	
+</wicket:extend>

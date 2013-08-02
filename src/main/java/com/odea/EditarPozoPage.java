@@ -1,7 +1,6 @@
 package com.odea;
 
 import java.util.List;
-import java.util.Locale;
 
 import org.apache.wicket.ajax.AjaxRequestTarget;
 import org.apache.wicket.ajax.markup.html.form.AjaxButton;
@@ -15,7 +14,6 @@ import org.apache.wicket.model.CompoundPropertyModel;
 import org.apache.wicket.model.LoadableDetachableModel;
 import org.apache.wicket.model.Model;
 import org.apache.wicket.spring.injection.annot.SpringBean;
-import org.apache.wicket.util.convert.IConverter;
 
 import com.odea.behavior.onlyDoubleBehavior.OnlyDoubleBehavior;
 import com.odea.behavior.onlyNumber.OnlyIntegerBehavior;
@@ -76,7 +74,7 @@ public abstract class EditarPozoPage extends BasePage {
     	yacimiento.setLabel(Model.of("Yacimiento"));
     	yacimiento.setRequired(true);
     	form.add(yacimiento);
-		
+	
 		RequiredTextField<Double> coordenadaX = new RequiredTextField<Double>("coordenadaX");
 		coordenadaX.setLabel(Model.of("Coordenada X"));
 		coordenadaX.add(new DoubleValidator(coordenadaX.getLabel().getObject()));
@@ -161,11 +159,10 @@ public abstract class EditarPozoPage extends BasePage {
 					Pozo pozo = (Pozo)form.getModelObject();
 					insertarPozo(pozo);					
 					this.setResponsePage(ListadoPozosPage.class);
-					
 				} catch (Exception ex) {
 					error(ex.getMessage());
 					target.add(feedbackPanel);
-				} 
+				}
 				
 			}
 
