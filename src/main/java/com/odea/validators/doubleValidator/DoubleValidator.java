@@ -10,7 +10,7 @@ public class DoubleValidator implements IValidator<Double> {
 	
 	private static final long serialVersionUID = 1L;
 	
-	private final String DOUBLE_PATTERN = "[-+]?[0-9]*\\.?[0-9]+";
+	private final String DOUBLE_PATTERN = "[-+]?[0-9]{1,7}(\\.[0-9]{1,4})?";
 	private final Pattern duracionPattern;
 	private String componente;
 	
@@ -25,7 +25,7 @@ public class DoubleValidator implements IValidator<Double> {
 		Double valor = validatable.getValue();
 		
 		if (!duracionPattern.matcher(valor.toString()).matches()) {	
-			this.error(validatable, "El campo '" + this.componente + "' tiene formato incorrecto.");
+			this.error(validatable, "El campo '" + this.componente + "' puede tener hasta 7 enteros y 4 decimales.");
 		}
 	}
 	

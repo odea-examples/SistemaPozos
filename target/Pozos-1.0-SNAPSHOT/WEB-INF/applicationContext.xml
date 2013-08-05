@@ -12,19 +12,19 @@
         <property name="dataSource" ref="dataSource"/>
     </bean>
 
-<!-- 	<bean id="dataSource" class="org.springframework.jdbc.datasource.DriverManagerDataSource"> -->
-<!--        <property name="driverClassName" value="com.mysql.jdbc.Driver" /> -->
-<!--        <property name="url" value="jdbc:postgresql://localhost:5432/pozos" /> -->
-<!--        <property name="username" value="gmazzei" /> -->
-<!--        <property name="password" value="gmazzei" /> -->
-<!--    	</bean> -->
-
 	<bean id="dataSource" class="org.springframework.jdbc.datasource.DriverManagerDataSource">
        <property name="driverClassName" value="com.mysql.jdbc.Driver" />
-       <property name="url" value="jdbc:mysql://dbdv01:3306/sistemaPozos" />
+       <property name="url" value="jdbc:mysql://10.1.4.8:3306/sistemaPozos" />
        <property name="username" value="pozos" />
        <property name="password" value="odeapozos" />
    	</bean>
+
+<!-- 	<bean id="dataSource" class="org.springframework.jdbc.datasource.DriverManagerDataSource"> -->
+<!--        <property name="driverClassName" value="com.mysql.jdbc.Driver" /> -->
+<!--        <property name="url" value="jdbc:mysql://localhost:3306/pozos" /> -->
+<!--        <property name="username" value="gmazzei" /> -->
+<!--        <property name="password" value="gmazzei" /> -->
+<!--    	</bean> -->
 
     
 </beans>

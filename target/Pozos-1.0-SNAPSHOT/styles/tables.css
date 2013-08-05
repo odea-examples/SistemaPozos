@@ -32,14 +32,14 @@ tr.odd .column1	{
 	}	
 .column1	{
 	background:#f9fcfe;
-	}
+	}		
 
 td {
 	color:#678197;
 	border-bottom:1px solid #e5eff8;
 	border-left:1px solid #e5eff8;
 	text-align:right;
-	}				
+	}
 th {
 	font-weight:normal;
 	color: #678197;
@@ -67,4 +67,10 @@ tfoot th em {
 	font-weight: bold;
 	font-size: 1.1em;
 	font-style: normal;
-	}	
+	}
+tfoot tr td {
+	color:#678197;
+	border-bottom:1px solid #e5eff8;
+	border-left:1px solid #e5eff8;
+	text-align:center;
+}	

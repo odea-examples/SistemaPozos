@@ -71,7 +71,7 @@ public class ListadoPozosPage extends BasePage {
             	item.add(new Label("metExtraccionPozo", new Model<String>(pozo.getMetExtraccion())));
             	item.add(new Label("observacionesPozo", new Model<String>(pozo.getObservaciones())));
             	
-            	
+          
             	PageParameters parameters = new PageParameters().add("pozoID", pozo.getID()).add("pozoCID", pozo.getCID()).add("pozoNombre", pozo.getNombre()).add("pozoYacimientoID", pozo.getYacimiento().getID()).add("pozoYacimientoNombre", pozo.getYacimiento().getNombre()).add("pozoCoordX", pozo.getCoordenadaX()).add("pozoCoordY", pozo.getCoordenadaY()).add("pozoCoordZ", pozo.getCoordenadaZ()).add("pozoRKB", pozo.getRKB()).add("pozoMR", pozo.getMR()).add("pozoNivelReferencia", pozo.getNivelReferencia()).add("pozoLinSism", pozo.getLinSism()).add("pozoPtoExp", pozo.getPtoExp()).add("pozoCategoria", pozo.getCategoria()).add("pozoEstado", pozo.getEstado()).add("pozoMetExtraccion", pozo.getMetExtraccion()).add("pozoObservaciones", pozo.getObservaciones()).add("pozoPosMapaX", pozo.getPosicionMapaX()).add("pozoPosMapaY", pozo.getPosicionMapaY());
             	
             	BookmarkablePageLink<ModificarPozoPage> botonModificarPozo = new BookmarkablePageLink<ModificarPozoPage>("modifyLink", ModificarPozoPage.class, parameters);
