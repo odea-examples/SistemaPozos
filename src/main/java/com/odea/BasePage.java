@@ -12,11 +12,11 @@ public class BasePage extends WebPage {
 		super();
 
 		WebMarkupContainer listadoPozosPage = this.armarWmc("ListadoPozosPage");
-		WebMarkupContainer pozosPage = this.armarWmc("PozosPage");
+//		WebMarkupContainer pozosPage = this.armarWmc("PozosPage");
 		WebMarkupContainer dashboardPage = this.armarWmc("DashboardPage");
 
 		this.add(listadoPozosPage);
-		this.add(pozosPage);
+//		this.add(pozosPage);
 		this.add(dashboardPage);
 	}
 	
