@@ -1,0 +1,54 @@
+<wicket:head>
+
+	<style type='text/css'>
+		input[type=text] { width: 150px; }
+		select { width: 150px; }
+	</style>
+	
+</wicket:head>
+
+<wicket:extend>			
+	
+	<div style="position: relative; min-width: 1200px; min-height: 700px;">
+		
+		<h2><i>Wells done</i></h2>
+		<br>
+		
+		<form wicket:id="form" style="border-style:dotted;">
+		
+			<h3>B&uacute;squeda</h3>
+				
+			<div>
+				<b><label for="nombre">Nombre: </label></b> 
+				<input type="text" wicket:id="nombre" name="nombre"/>
+			
+				<b><label for="yacimiento">Yacimiento: </label></b> 
+				<select wicket:id="yacimiento" name="yacimiento"></select>
+				
+				<b><label for="cuenca">Cuenca: </label></b> 
+				<select name="cuenca"></select>
+				
+				<b><label for="area">&Aacute;rea: </label></b> 
+				<select name="area"></select>
+				
+			</div>
+			
+			<div style="position:absolute; top:105px; left:900px">
+				<input type="submit" wicket:id="limpiarButton" value="Limpiar">
+				<input type="submit" wicket:id="submitButton" value="Buscar">
+			</div>
+			
+			<br>
+			
+		</form>
+		
+		<br>
+		
+		<div wicket:id="mapaLeaflet" style="position:absolute; top:170px; left:0px;"></div>
+		
+		<img src="images/FolderTree.png" alt="FolderTree" title="FolderTree" style="position:absolute; left:600px; width: 300px; height: 400px;"/>
+		
+	</div>
+	
+	
+</wicket:extend>

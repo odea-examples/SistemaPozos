@@ -13,10 +13,11 @@ public class BasePage extends WebPage {
 
 		WebMarkupContainer listadoPozosPage = this.armarWmc("ListadoPozosPage");
 		WebMarkupContainer pozosPage = this.armarWmc("PozosPage");
-		
+		WebMarkupContainer dashboardPage = this.armarWmc("DashboardPage");
+
 		this.add(listadoPozosPage);
 		this.add(pozosPage);
-
+		this.add(dashboardPage);
 	}
 	
 	private WebMarkupContainer armarWmc(String idWmc) {
