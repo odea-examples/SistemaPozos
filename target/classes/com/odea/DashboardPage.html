@@ -30,7 +30,6 @@
 				
 				<b><label for="area">&Aacute;rea: </label></b> 
 				<select name="area"></select>
-				
 			</div>
 			
 			<div style="position:absolute; top:105px; left:900px">
@@ -44,9 +43,46 @@
 		
 		<br>
 		
-		<div wicket:id="mapaLeaflet" style="position:absolute; top:170px; left:0px;"></div>
+		<div wicket:id="mapaLeaflet" style="position:absolute; top:170px; left:0px; border-style: double"></div>
 		
-		<img src="images/FolderTree.png" alt="FolderTree" title="FolderTree" style="position:absolute; left:600px; width: 300px; height: 400px;"/>
+		<div  style="position:absolute; left:550px; width: 400px; height: 380px; border-style: solid;" >
+			<img src="images/FolderTree.png" alt="FolderTree" title="FolderTree" style=" position:relative; left: 40px ;width: 280px; height: 370px;"/>
+		</div>
+		
+		
+		<div wicket:id="listViewContainer" style="position:relative; top:400px; left:480px; width:800px;">
+	
+			<table>
+				<thead>
+					<tr>
+						<th scope="col">Resultados</th>
+						<th scope="col"><input type="checkbox">Operaciones</th>
+						<th scope="col"><input type="checkbox">Producci&oacute;n</th>
+						<th scope="col"><input type="checkbox">Estratigraf&iacute;a</th>
+						<th scope="col"><input type="checkbox">Litolog&iacute;a</th>
+						<th scope="col"><input type="checkbox">Perfiles</th>
+						<th scope="col"><input type="checkbox">Ensayos</th>
+					</tr>
+				</thead>
+				<tbody>
+					<tr wicket:id="pozosListView">
+<!-- 						<td wicket:id="nombrePozo"></td> -->
+						<td><label wicket:id="nombrePozo"></label><input type="checkbox"></td>
+						<td></td>
+						<td></td>
+						<td></td>
+						<td></td>
+						<td></td>
+					</tr>
+				</tbody>
+				<tfoot>
+				    <tr>
+			    	    <td wicket:id="navigator" align="center" colspan="7"></td>
+			        </tr>
+	       		</tfoot>
+			</table>
+		</div>
+		
 		
 	</div>
 	
