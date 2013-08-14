@@ -2,7 +2,7 @@
 
 	<style type='text/css'>
 		input[type=text] { width: 150px; }
-		select { width: 150px; }
+		select { min-width: 150px; }
 	</style>
 	
 </wicket:head>
@@ -19,17 +19,17 @@
 			<h3>B&uacute;squeda</h3>
 				
 			<div>
-				<b><label for="nombre">Nombre: </label></b> 
-				<input type="text" wicket:id="nombre" name="nombre"/>
+				<b><label for="cuenca">Cuenca: </label></b> 
+				<select name="cuenca"></select>
+
+				<b><label for="area">&Aacute;rea: </label></b> 
+				<select name="area"></select>
 			
 				<b><label for="yacimiento">Yacimiento: </label></b> 
 				<select wicket:id="yacimiento" name="yacimiento"></select>
 				
-				<b><label for="cuenca">Cuenca: </label></b> 
-				<select name="cuenca"></select>
-				
-				<b><label for="area">&Aacute;rea: </label></b> 
-				<select name="area"></select>
+				<b><label for="nombre">Nombre: </label></b> 
+				<input type="text" wicket:id="nombre" name="nombre"/>				
 			</div>
 			
 			<div style="position:absolute; top:105px; left:900px">
@@ -45,7 +45,7 @@
 		
 		<div wicket:id="mapaLeaflet" style="position:absolute; top:170px; left:0px; border-style: double"></div>
 		
-		<div  style="position:absolute; left:550px; width: 400px; height: 380px; border-style: solid;" >
+		<div  style="position:absolute; top:170px; left:550px; width: 400px; height: 380px; border-style: solid;" >
 			<img src="images/FolderTree.png" alt="FolderTree" title="FolderTree" style=" position:relative; left: 40px ;width: 280px; height: 370px;"/>
 		</div>
 		
@@ -68,6 +68,7 @@
 					<tr wicket:id="pozosListView">
 <!-- 						<td wicket:id="nombrePozo"></td> -->
 						<td><label wicket:id="nombrePozo"></label><input type="checkbox"></td>
+						<td></td>
 						<td></td>
 						<td></td>
 						<td></td>

@@ -9,11 +9,11 @@ img {
 	margin-top:.5em;
 	}	
 table {
-	width:90%;
+ 	width:90%;
 	border-top:1px solid #e5eff8;
 	border-right:1px solid #e5eff8;
 	margin:1em auto;
-		border-collapse:collapse;
+	border-collapse:collapse;
 	}
 caption {
 	color: #9ba9b4;
@@ -38,7 +38,7 @@ td {
 	color:#678197;
 	border-bottom:1px solid #e5eff8;
 	border-left:1px solid #e5eff8;
-	text-align:right;
+	text-align:left;
 	}
 th {
 	font-weight:normal;
@@ -51,7 +51,7 @@ thead th {
 	background:#f4f9fe;
 	text-align:center;
 	font:1.1em "Century Gothic","Trebuchet MS",Arial,Helvetica,sans-serif;
-	color:#66a3d3
+	color:#66a3d3;
 	}	
 tfoot th {
 	text-align:center;
@@ -73,4 +73,7 @@ tfoot tr td {
 	border-bottom:1px solid #e5eff8;
 	border-left:1px solid #e5eff8;
 	text-align:center;
-}	
+}
+.numeric {
+	text-align: right;
+}

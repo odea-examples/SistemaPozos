@@ -13,6 +13,7 @@
           <string>images/note.png</string>
           <string>images/delete.png</string>
           <string>images/tanbg.png</string>
+          <string>images/FolderTree.png</string>
           <string>images/webdesign.png0000644</string>
           <string>images/BG.png</string>
           <string>images/modificarIcon.gif</string>
@@ -32,12 +33,15 @@
           <string>WEB-INF/classes/log4j.properties</string>
           <string>WEB-INF/classes/com/odea/domain/Yacimiento.class</string>
           <string>WEB-INF/classes/com/odea/domain/Pozo.class</string>
+          <string>WEB-INF/classes/com/odea/DashboardPage$3.class</string>
           <string>WEB-INF/classes/com/odea/BasePage.html</string>
           <string>WEB-INF/classes/com/odea/EditarPozoPage$1.class</string>
+          <string>WEB-INF/classes/com/odea/DashboardPage$1.class</string>
           <string>WEB-INF/classes/com/odea/ListadoPozosPage$1.class</string>
           <string>WEB-INF/classes/com/odea/PozosPage.class</string>
           <string>WEB-INF/classes/com/odea/EditarPozoPage.properties</string>
           <string>WEB-INF/classes/com/odea/PozosPage$3.class</string>
+          <string>WEB-INF/classes/com/odea/DashboardPage.html</string>
           <string>WEB-INF/classes/com/odea/ListadoPozosPage$2$1.class</string>
           <string>WEB-INF/classes/com/odea/components/confirmPanel/ConfirmationButton.class</string>
           <string>WEB-INF/classes/com/odea/components/confirmPanel/ConfirmationLink.class</string>
@@ -45,8 +49,10 @@
           <string>WEB-INF/classes/com/odea/BasePage.class</string>
           <string>WEB-INF/classes/com/odea/WicketApplication.class</string>
           <string>WEB-INF/classes/com/odea/ListadoPozosPage.class</string>
+          <string>WEB-INF/classes/com/odea/DashboardPage$5.class</string>
           <string>WEB-INF/classes/com/odea/PozosPage.html</string>
           <string>WEB-INF/classes/com/odea/ListadoPozosPage$2.class</string>
+          <string>WEB-INF/classes/com/odea/DashboardPage$2.class</string>
           <string>WEB-INF/classes/com/odea/EditarPozoPage.html</string>
           <string>WEB-INF/classes/com/odea/MapaLeaflet/MapaLeaflet.class</string>
           <string>WEB-INF/classes/com/odea/MapaLeaflet/MapaLeaflet$2.class</string>
@@ -74,6 +80,8 @@
           <string>WEB-INF/classes/com/odea/EditarPozoPage.class</string>
           <string>WEB-INF/classes/com/odea/EditarPozoPage$2.class</string>
           <string>WEB-INF/classes/com/odea/PozosPage$4.class</string>
+          <string>WEB-INF/classes/com/odea/DashboardPage.class</string>
+          <string>WEB-INF/classes/com/odea/DashboardPage$4.class</string>
           <string>WEB-INF/classes/com/odea/ModificarPozoPage.class</string>
           <string>WEB-INF/lib/wicket-core-6.1.0.jar</string>
           <string>WEB-INF/lib/wicket-util-6.1.0.jar</string>

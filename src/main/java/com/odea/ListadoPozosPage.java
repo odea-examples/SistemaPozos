@@ -1,6 +1,9 @@
 package com.odea;
 
+import java.text.DecimalFormat;
+import java.text.DecimalFormatSymbols;
 import java.util.List;
+import java.util.Locale;
 
 import org.apache.wicket.ajax.AjaxRequestTarget;
 import org.apache.wicket.ajax.markup.html.navigation.paging.AjaxPagingNavigator;
@@ -55,14 +58,17 @@ public class ListadoPozosPage extends BasePage {
             protected void populateItem(ListItem<Pozo> item) {
             	final Pozo pozo = item.getModel().getObject();   
             	
+            	DecimalFormat df = new DecimalFormat("#0.000");
+            	
+            	
             	item.add(new Label("cidPozo", new Model<String>(pozo.getCID())));
             	item.add(new Label("nombrePozo", new Model<String>(pozo.getNombre())));
             	item.add(new Label("yacimientoPozo", new Model<Yacimiento>(pozo.getYacimiento())));
-            	item.add(new Label("coordenadaXPozo", new Model<Double>(pozo.getCoordenadaX())));
-            	item.add(new Label("coordenadaYPozo", new Model<Double>(pozo.getCoordenadaY())));
-            	item.add(new Label("coordenadaZPozo", new Model<Double>(pozo.getCoordenadaZ())));
-            	item.add(new Label("RKBPozo", new Model<Double>(pozo.getRKB())));
-            	item.add(new Label("MRPozo", new Model<Double>(pozo.getMR())));
+            	item.add(new Label("coordenadaXPozo", new Model<String>(df.format(pozo.getCoordenadaX()))));
+            	item.add(new Label("coordenadaYPozo", new Model<String>(df.format(pozo.getCoordenadaY()))));
+            	item.add(new Label("coordenadaZPozo", new Model<String>(df.format(pozo.getCoordenadaZ()))));
+            	item.add(new Label("RKBPozo", new Model<String>(df.format(pozo.getRKB()))));
+            	item.add(new Label("MRPozo", new Model<String>(df.format(pozo.getMR()))));
             	item.add(new Label("nivelReferenciaPozo", new Model<Integer>(pozo.getNivelReferencia())));
             	item.add(new Label("linSismPozo", new Model<String>(pozo.getLinSism())));
             	item.add(new Label("ptoExpPozo", new Model<String>(pozo.getPtoExp())));

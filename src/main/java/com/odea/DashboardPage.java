@@ -48,7 +48,7 @@ public class DashboardPage extends BasePage {
 
 			@Override
 			protected List<Pozo> load() {
-				return DashboardPage.this.daoService.getPozos();
+				return DashboardPage.this.daoService.buscarPozos(DashboardPage.this.pozoBusqueda);
 			}
 		};
 
@@ -95,6 +95,7 @@ public class DashboardPage extends BasePage {
 				
 				target.add(form);
 				target.add(DashboardPage.this.mapa);
+				target.add(DashboardPage.this.listViewContainer);
 			}
         	
 		};
@@ -107,6 +108,7 @@ public class DashboardPage extends BasePage {
 
 			@Override
 			protected void onSubmit(AjaxRequestTarget target, Form<?> form) {
+				target.add(DashboardPage.this.listViewContainer);
 				target.add(DashboardPage.this.mapa);
 			}
         	
